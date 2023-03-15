@@ -10,7 +10,7 @@ jobs:
           - name: Checkout
             uses: actions/checkout@v2
           - name: Meterian Scanner
-            uses: MeterianHQ/meterian-github-action@v1.0.10
+            uses: MeterianHQ/meterian-github-action@v1.0.12
             with:
               oss: true
-              cli_args: --project-url=https://github.com/NanaOrg/actix --project-branch=develop --debug
+              cli_args: --info
