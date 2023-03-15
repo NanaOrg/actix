@@ -13,4 +13,4 @@ jobs:
             uses: MeterianHQ/meterian-github-action@v1.0.10
             with:
               oss: true
-              cli_args: --info
+              cli_args: --project-url=https://github.com/NanaOrg/actix --project-branch=develop --debug
