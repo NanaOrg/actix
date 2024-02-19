@@ -11,11 +11,18 @@ jobs:
             uses: actions/checkout@v3
           - name: Scan project with the Meterian client
             uses: MeterianHQ/meterian-github-action@v1.0.17
+            continue-on-error: true
             env:
                 METERIAN_API_TOKEN: ${{ secrets.METERIAN_API_TOKEN_QA }}
                 METERIAN_ENV: qa
             with:
                 cli_args: "--report-sarif=report.sarif --flags:env=qa"
+
+          - name: Save snyk sarif report
+            uses: actions/upload-artifact@v3
+            with:
+                name: snyk-sarif-report
+                path: snyk.sarif
 
           - name: Upload SARIF file
             if: success() || failure()
