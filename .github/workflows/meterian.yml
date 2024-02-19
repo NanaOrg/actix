@@ -21,8 +21,8 @@ jobs:
           - name: Save snyk sarif report
             uses: actions/upload-artifact@v3
             with:
-                name: snyk-sarif-report
-                path: snyk.sarif
+                name: sarif-report
+                path: report.sarif
 
           - name: Upload SARIF file
             if: success() || failure()
